@@ -12,6 +12,10 @@
     conn.onmessage = function(evt) {
         console.log(evt.data);
 
+        if (evt.data == "ping") {
+            conn.send("pong");
+        }
+
         count++;
         counter.innerText = count;
     }

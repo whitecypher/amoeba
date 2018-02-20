@@ -11,6 +11,8 @@ import (
 
 	"github.com/alphacentaurigames/conquest-alpha-go/lib/routing"
 	"github.com/whitecypher/amoeba/cmd/amoeba/handler"
+	"github.com/whitecypher/amoeba/lib/engine"
+	"github.com/whitecypher/amoeba/lib/ws"
 	"github.com/whitecypher/logr"
 )
 
@@ -42,14 +44,14 @@ func main() {
 	go func() {
 		// send messages
 		for {
-			e := handler.Event{
+			e := engine.Event{
 				X:         rand.Intn(200),
 				Y:         rand.Intn(200),
 				Direction: rand.Intn(360),
 				Velocity:  rand.Intn(10),
 				Decay:     1,
 			}
-			handler.Broadcast(e)
+			ws.Broadcast(e)
 			time.Sleep(time.Second / time.Duration(rand.Intn(9)+1))
 		}
 	}()
