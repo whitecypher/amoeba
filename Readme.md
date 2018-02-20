@@ -13,6 +13,6 @@ cd amoeba
 
 Then open `http://localhost:8080` in your browser.
 
-Messages received are printed to the browser console and a running counter on the page shows the numbber of message that have been received. It's not fancy but I believe sufficient to illustrate the process.
+Messages received are printed to the browser console and a running counter on the page shows the number of message that have been received. It's not fancy but I believe sufficient to illustrate the process.
 
 
